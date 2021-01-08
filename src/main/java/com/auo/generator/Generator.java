@@ -12,16 +12,21 @@ import java.util.List;
 
 public class Generator {
     public static void main(String[] args) throws IOException {
-        Loader loader = new Loader(Path.of("days").toFile());
+        Loader loader = new Loader((args.length > 0 ?
+                Path.of(args[0]) :
+                Path.of("days")).toFile());
+
         List<Game> games = loader.load();
 
-        TemplateEngine templateEngine = TemplateEngine.create(
-                new DirectoryCodeResolver(Path.of("src", "main", "jte")),
-                ContentType.Html);
+        TemplateEngine templateEngine = args.length == 0 ?
+                TemplateEngine.create(new DirectoryCodeResolver(Path.of("src", "main", "jte")), ContentType.Html) :
+                TemplateEngine.createPrecompiled(ContentType.Html);
 
-        FileOutput output = new FileOutput(Path.of("build", "index.html"));
+        try (FileOutput output = new FileOutput(args.length > 1 ?
+                Path.of(args[1], "index.html") :
+                Path.of("build", "index.html"))) {
 
-        templateEngine.render("index.jte", new IndexPage(games), output);
-        output.close();
+            templateEngine.render("index.jte", new IndexPage(games), output);
+        }
     }
 }
