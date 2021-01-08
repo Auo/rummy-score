@@ -1,4 +1,4 @@
-@import com.auo.generator.template.IndexPage;import java.time.LocalDateTime;import java.time.format.DateTimeFormatter
+@import com.auo.generator.template.IndexPage;import java.time.LocalDate;import java.time.format.DateTimeFormatter
 
 @param IndexPage indexPage
 
@@ -7,7 +7,7 @@
     content = @`
     <h1>Score</h1>
 
-    @for(LocalDateTime month : indexPage.months)
+    @for(LocalDate month : indexPage.months)
         <h2>${month.format(DateTimeFormatter.ofPattern("yyyy-MM"))}</h2>
 
         <table>

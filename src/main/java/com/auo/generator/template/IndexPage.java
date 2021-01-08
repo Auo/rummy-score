@@ -2,6 +2,7 @@ package com.auo.generator.template;
 
 import com.auo.generator.Game;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.TemporalAdjuster;
 import java.time.temporal.TemporalAdjusters;
@@ -17,19 +18,19 @@ public class IndexPage extends Page {
         SCORE_COMPARATOR = comparing.thenComparing(s -> s.exits);
     }
 
-    public final List<LocalDateTime> months;
-    public final Map<LocalDateTime, List<Game>> gamesPerMonth;
-    public final Map<LocalDateTime, List<MonthlyScore>> monthlyScore = new LinkedHashMap<>();
+    public final List<LocalDate> months;
+    public final Map<LocalDate, List<Game>> gamesPerMonth;
+    public final Map<LocalDate, List<MonthlyScore>> monthlyScore = new LinkedHashMap<>();
 
     public IndexPage(List<Game> games) {
         this.gamesPerMonth = games.stream()
-                .collect(Collectors.groupingBy(game -> game.dateTime.with(MONTH)));
+                .collect(Collectors.groupingBy(game -> game.dateTime.toLocalDate().with(MONTH)));
 
         this.months = gamesPerMonth.keySet().stream()
                 .sorted()
                 .collect(Collectors.toList());
 
-        for (LocalDateTime month : months) {
+        for (LocalDate month : months) {
             List<Game> monthlyGames = gamesPerMonth.get(month);
             Map<String, MonthlyScore> score = new HashMap<>();
 
