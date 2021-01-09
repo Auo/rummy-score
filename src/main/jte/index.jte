@@ -16,7 +16,7 @@
                 <table>
                     <tr>
                     @for(String player: game.players())
-                        <td>${player}</td>
+                        <th>${player}</th>
                     @endfor
                     </tr>
                 @for(int i = 0; i < 7; i++)
@@ -32,14 +32,14 @@
         <h3>Summary</h3>
         <table>
             <tr>
-                <td></td>
-                <td>wins</td>
-                <td>exits</td>
-                <td>won month</td>
+                <th></th>
+                <th>wins</th>
+                <th>exits</th>
+                <th>won month</th>
             </tr>
             @for(IndexPage.MonthlyScore score : indexPage.monthlyScore.get(month))
             <tr>
-                <td>${score.player}</td>
+                <td class="player">${score.player}</td>
                 <td>${score.wins}</td>
                 <td>${score.exits}</td>
                 <td>@if(score.monthlyWinner) 🍰🎂🎉 @endif </td>
