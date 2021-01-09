@@ -25,6 +25,7 @@ public class IndexPage extends Page {
     public IndexPage(List<Game> games) {
         this.gamesPerMonth = games.stream()
                 .collect(Collectors.groupingBy(game -> game.dateTime.toLocalDate().with(MONTH)));
+        this.gamesPerMonth.forEach((k, v) -> v.sort(Comparator.comparing(game -> game.dateTime)));
 
         this.months = gamesPerMonth.keySet().stream()
                 .sorted()
