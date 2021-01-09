@@ -8,7 +8,7 @@ public class Game {
     public LocalDateTime dateTime;
     public StringBuilder commentBuilder;
     // LinkedHashMap because order is important.
-    private LinkedHashMap<String, ArrayList<Integer>> score;
+    public LinkedHashMap<String, ArrayList<Integer>> score;
 
     public void result(String player, int playerScore) {
         if (score == null) {
