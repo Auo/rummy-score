@@ -1,0 +1,11 @@
+# Some claim this was a just victory, I'm not convinced
+10:00
+AL	NA	NL
+19	89	0
+0	11	25
+10	0	26
+96	0	119
+4	0	10
+0	94	92
+88	0	145
+
