@@ -40,6 +40,7 @@ public class IndexPage extends Page {
                 String exit = game.gameExit();
 
                 for (String player : game.players()) {
+                    int points = game.score.get(player).stream().reduce(0, Integer::sum);
                     score.compute(player, (key, value) -> {
                         if (value == null) {
                             value = new MonthlyScore(player);
@@ -53,6 +54,8 @@ public class IndexPage extends Page {
                         if (exit.equals(player)) {
                             value.incExits();
                         }
+
+                        value.addPoints(points);
 
                         return value;
                     });
@@ -74,6 +77,7 @@ public class IndexPage extends Page {
         public int wins = 0;
         public int games = 0;
         public int exits = 0;
+        public int totalPoints = 0;
 
         public boolean monthlyWinner = false;
 
@@ -91,6 +95,10 @@ public class IndexPage extends Page {
 
         void incExits() {
             exits++;
+        }
+
+        void addPoints(int points) {
+            totalPoints += points;
         }
     }
 }
