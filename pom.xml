@@ -24,7 +24,7 @@
             </plugin>
             <!-- Comment out plugin for local development, otherwise
             the template might not be updated -->
-            <<plugin>
+            <plugin>
                 <groupId>gg.jte</groupId>
                 <artifactId>jte-maven-plugin</artifactId>
                 <version>${jte.version}</version>
