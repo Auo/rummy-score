@@ -8,7 +8,9 @@
     <h1>Score</h1>
 
     @for(LocalDate month : indexPage.months)
-        <h2>${month.format(DateTimeFormatter.ofPattern("yyyy-MM"))}</h2>
+        <details>
+        <summary><h2>${month.format(DateTimeFormatter.ofPattern("yyyy-MM"))}</h2></summary>
+
         @for(Game game: indexPage.gamesPerMonth.get(month))
             <div>
                 <h3>${game.dateTime.toString()}</h3>
@@ -38,7 +40,8 @@
                 </table>
             </div>
         @endfor
-        <h3>Summary</h3>
+        </details>
+        <h3>Summary ${month.format(DateTimeFormatter.ofPattern("yyyy-MM"))}</h3>
         <table>
             <tr>
                 <th></th>

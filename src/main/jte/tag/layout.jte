@@ -24,7 +24,6 @@
             width:100%;
             max-width:500px;
           }
-
           th, .player {
             font-weight:bold;
           }
@@ -33,6 +32,9 @@
           }
           .total-score {
             font-weight: bold;
+          }
+          summary h2 {
+            display: inline-block;
           }
         </style>
 
