@@ -17,7 +17,6 @@
             width:100%;
             max-width:500px;
           }
-
           th, .player {
             font-weight:bold;
           }
@@ -26,6 +25,9 @@
           }
           .total-score {
             font-weight: bold;
+          }
+          summary h2 {
+            display: inline-block;
           }
         </style>
 
@@ -38,7 +40,9 @@
     <h1>Score</h1>
 
     
-        <h2>2021-01</h2>
+        <details>
+        <summary><h2>2021-01</h2></summary>
+
         
             <div>
                 <h3>2021-01-05T12:00</h3>
@@ -1008,7 +1012,8 @@
                 </table>
             </div>
         
-        <h3>Summary</h3>
+        </details>
+        <h3>Summary 2021-01</h3>
         <table>
             <tr>
                 <th></th>
