@@ -65,7 +65,7 @@ public class IndexPage extends Page {
             monthlyScore.put(month, new ArrayList<>(score.values()));
             LocalDateTime now = LocalDateTime.now().with(MONTH);
 
-            if (now.getYear() != month.getYear() && now.getMonth() != month.getMonth()) {
+            if (!(now.getYear() == month.getYear() && now.getMonth() == month.getMonth())) {
                 Optional<MonthlyScore> winner = score.values().stream().max(SCORE_COMPARATOR);
                 winner.ifPresent(value -> value.monthlyWinner = true);
             }
