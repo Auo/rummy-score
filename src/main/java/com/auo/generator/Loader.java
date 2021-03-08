@@ -19,7 +19,7 @@ public class Loader {
     }
 
     public List<Game> load() throws IOException {
-        File[] days = dir.listFiles((dir, name) -> name.matches("^[0-9]{4}-[0-2]{2}-[0-9]{2}.txt$"));
+        File[] days = dir.listFiles((dir, name) -> name.matches("^[0-9]{4}-(0[1-9]|1[0-2])-[0-9]{2}.txt$"));
         if (days == null || days.length == 0) {
             return List.of();
         }
