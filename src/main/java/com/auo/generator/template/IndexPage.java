@@ -28,7 +28,7 @@ public class IndexPage extends Page {
         this.gamesPerMonth.forEach((k, v) -> v.sort(Comparator.comparing(game -> game.dateTime)));
 
         this.months = gamesPerMonth.keySet().stream()
-                .sorted()
+                .sorted(Comparator.reverseOrder())
                 .collect(Collectors.toList());
 
         for (LocalDate month : months) {
