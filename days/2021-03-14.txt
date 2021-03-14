@@ -1,0 +1,11 @@
+# The evil empire has fallen
+10:00
+NA	NL	AL
+10	0	4
+2	3	0
+0	79	10
+14	0	63
+0	97	2
+13	0	8
+76	0	93
+
