@@ -1,20 +1,21 @@
 # Rummy score
-Why write the scores in a notepad and potentially lose pages 
+
+Why write the scores in a notepad and potentially lose pages
 when you can build a site generator and save the results in git?
 
 I'm probably going to regret persisting this, since I suspect I won't win 😥
 
-## input
+## Input
 
-- One file / day
+- One file per day, e.g. `2021-01-01.txt`
 - Each file can contain multiple games
-- File should be named after date
 - Support comments of game with `#`
 - First player is first to act. Last player is dealer for the first round.
-- there must exist a newline between matches and at end of file.
+- There must exist a newline between matches as well as at the end of the file.
 
 ```
 # Text to add to template
+HOUR:MINUTE
 A	B	C
 0	2	2
 2	0	2
