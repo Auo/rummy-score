@@ -1,0 +1,11 @@
+# Two in a row is a good start
+10:00
+AL	NA	NL
+0	16	9
+11	0	6
+5	2	0
+0	80	15
+82	0	22
+5	0	2
+70	145	0
+
