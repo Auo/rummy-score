@@ -1,0 +1,11 @@
+# So called rummy hat trick
+10:00
+NL	AL	NA
+2	2	0
+0	16	7
+0	2	16
+7	61	0
+8	9	0
+55	4	0
+0	91	36
+
