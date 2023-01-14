@@ -3,7 +3,6 @@ package com.auo.generator.template;
 import com.auo.generator.Game;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.temporal.TemporalAdjuster;
 import java.time.temporal.TemporalAdjusters;
 import java.util.*;
@@ -11,12 +10,9 @@ import java.util.stream.Collectors;
 
 public class IndexPage extends Page {
     private static final TemporalAdjuster MONTH = TemporalAdjusters.firstDayOfMonth();
-    private static final Comparator<MonthlyScore> SCORE_COMPARATOR;
-
-    static {
-        Comparator<MonthlyScore> comparing = Comparator.comparing(s -> s.wins);
-        SCORE_COMPARATOR = comparing.thenComparing(s -> s.exits);
-    }
+    public static final Comparator<MonthlyScore> SCORE_COMPARATOR = Comparator.comparing((MonthlyScore s) -> s.wins)
+            .thenComparing(s -> s.exits)
+            .thenComparing(s -> s.totalPoints, Comparator.reverseOrder());
 
     public final List<LocalDate> months;
     public final Map<LocalDate, List<Game>> gamesPerMonth;
