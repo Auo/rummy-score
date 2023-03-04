@@ -60,7 +60,7 @@
                 <th>won month</th>
             </tr>
 
-            !{List<IndexPage.MonthlyScore> sortedScores = indexPage.monthlyScore.get(month).stream().sorted(IndexPage.SCORE_COMPARATOR.reversed()).collect(Collectors.toList())}
+            !{List<IndexPage.MonthlyScore> sortedScores = indexPage.monthlyScore.get(month).stream().sorted(IndexPage.SCORE_COMPARATOR.reversed()).collect(Collectors.toList()); }
             @for(ForSupport<IndexPage.MonthlyScore> entry : ForSupport.of(sortedScores))
             !{var score = entry.get(); }
             <tr>

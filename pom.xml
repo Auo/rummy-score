@@ -8,7 +8,7 @@
     <artifactId>rummy-score</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
-        <jte.version>1.5.0</jte.version>
+        <jte.version>2.3.0</jte.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <build>
@@ -30,6 +30,7 @@
                 <version>${jte.version}</version>
                 <configuration>
                     <sourceDirectory>${basedir}/src/main/jte</sourceDirectory>
+                    <targetDirectory>${basedir}/jte-classes</targetDirectory>
                     <contentType>Html</contentType>
                 </configuration>
                 <executions>
