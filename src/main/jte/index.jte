@@ -10,7 +10,7 @@
 
 @param IndexPage indexPage
 
-@tag.layout(
+@template.tag.layout(
     page = indexPage,
     content = @`
     <h1>Score</h1>
